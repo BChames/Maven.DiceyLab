@@ -6,53 +6,41 @@ public class Bins {
     private Integer numberOfDie;
     private Integer numberOfTosses;
 
-
-    //static Integer[] binArray = new Integer[ numberOfDie * 6];
-
     public Bins(Integer numberOfDie, Integer numberOfTosses) {
         this.numberOfDie = numberOfDie;
         this.numberOfTosses = numberOfTosses;
     }
 
 
-    public Integer[] saveRolls() {
+    public double[] saveRolls() {
 
-        Dice die = new Dice();
-        Integer[] binArray = new Integer[numberOfDie * 6];
+        Dice die = new Dice(numberOfDie);
+        double[] binArray = new double[numberOfDie * 6];
 
         for (int i = 0; i < numberOfTosses; i++) {
-            binArray[i] = die.rollDice(numberOfDie);
+            binArray[die.rollDice() - 1] +=1;
 
         }
         return binArray;
     }
 
+
+
     //print method
     //make array equal to bin array
     //how can I manipulate the values to print them out
-    public PrintStream printResults() {
+    public void printResults() {
 
-        Integer[] printArray = saveRolls();
-        Integer[] printArray2 = new Integer[printArray.length];
+        double[] printArray = saveRolls();
 
-        for (int i = 0; i < 12; i++) {
-            printArray[i] = printArray2[i];
+        for (int i = 0; i < printArray.length; i++) {
+            System.out.printf("%4d %s %70.0f %s %1.2f %s", i + 1, " : ", printArray[i], " : ", printArray[i] / numberOfTosses, " ");
+
+            for (int j = 0; j < (printArray[i] / numberOfTosses) * 100; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
-
-       /*
-        for (int i = 0; i < 5; i++) {
-            x = (Integer) Array.get(printArray2, i);
-
-        }
-
-        */
-     //  Integer x = (Integer) Array.get(printArray2, 1);
-
-
-        PrintStream format = System.out.format("%d", printArray2[10]);
-
-        return format;
-
 
     }
 }

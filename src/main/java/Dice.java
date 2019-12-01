@@ -1,13 +1,20 @@
 public class Dice {
 
-    public Integer rollDice(Integer tossedDice){
+     Integer numOfRolls;
+
+     public Dice(Integer x){
+         this.numOfRolls = x;
+     }
+
+    public Integer rollDice(){
         int dice = 0;
 
-        for( int i = 0; i < tossedDice; i++){
+        for( int i = 0; i < numOfRolls; i++){
             dice+=(int)(Math.random()*6+1);
-            System.out.println(dice);
-         //Random number generated from method is added to dice.
+           // System.out.println(dice);
+
         }
         return dice;
     }
+
 }
