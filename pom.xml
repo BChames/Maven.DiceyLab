@@ -9,14 +9,20 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+<<<<<<< HEAD
         <!-- https://mvnrepository.com/artifact/junit/junit -->
+=======
+>>>>>>> 41a3743b0c66e3e2624e21323ec5ba40c68313a8
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 41a3743b0c66e3e2624e21323ec5ba40c68313a8
     </dependencies>
 
 </project>

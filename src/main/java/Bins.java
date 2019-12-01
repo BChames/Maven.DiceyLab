@@ -3,6 +3,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Bins {
+
     private Integer numberOfDie;
     private Integer numberOfTosses;
 
